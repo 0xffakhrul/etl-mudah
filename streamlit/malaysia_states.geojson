@@ -1,0 +1,75 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {"name": "Johor"},
+            "id": "Johor"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Kedah"},
+            "id": "Kedah"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Kelantan"},
+            "id": "Kelantan"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Melaka"},
+            "id": "Melaka"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Negeri Sembilan"},
+            "id": "Negeri Sembilan"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Pahang"},
+            "id": "Pahang"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Perak"},
+            "id": "Perak"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Perlis"},
+            "id": "Perlis"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Pulau Pinang"},
+            "id": "Pulau Pinang"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Sabah"},
+            "id": "Sabah"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Sarawak"},
+            "id": "Sarawak"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Selangor"},
+            "id": "Selangor"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Terengganu"},
+            "id": "Terengganu"
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Kuala Lumpur"},
+            "id": "Kuala Lumpur"
+        }
+    ]
+} 
