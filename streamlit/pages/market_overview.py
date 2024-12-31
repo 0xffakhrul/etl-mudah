@@ -145,11 +145,6 @@ def render_car_features(df):
         - Diesel vehicles represent {diesel_percent:.1f}% of listings
         - Electric vehicles make up {electric_percent:.1f}% of the market
         - The low EV percentage reflects the early stages of electric vehicle adoption in Malaysia
-        
-        *Number of vehicles by fuel type:*
-        - Petrol: {int(fuel_counts.get('petrol', 0)):,} vehicles
-        - Diesel: {int(fuel_counts.get('diesel', 0)):,} vehicles
-        - Electric: {int(fuel_counts.get('electric', 0)):,} vehicles
         """)
 
 def render_motorcycle_features(df):

@@ -180,6 +180,23 @@ def render_mileage_analysis(df):
             xaxis_tickangle=45
         )
         st.plotly_chart(fig, use_container_width=True)
+
+        # Calculate price drops at different mileage points
+        low_mileage_price = mileage_price.iloc[0]['mean']  # Price at lowest mileage
+        mid_mileage_price = mileage_price.iloc[len(mileage_price)//2]['mean']  # Price at middle mileage
+        high_mileage_price = mileage_price.iloc[-1]['mean']  # Price at highest mileage
+        
+        # Calculate percentage drops
+        mid_mileage_drop = ((low_mileage_price - mid_mileage_price) / low_mileage_price * 100)
+        total_drop = ((low_mileage_price - high_mileage_price) / low_mileage_price * 100)
+        
+        st.markdown(f"""
+        💡 **Key Insights**:
+        - Cars lose approximately {mid_mileage_drop:.1f}% of their value at {bin_size*5:,} km
+        - The total price drop from {bin_size:,} km to {max_mileage:,} km is {total_drop:.1f}%
+        - Price depreciation is steepest in the first {bin_size*3:,} km
+        - After {bin_size*8:,} km, the price decrease tends to slow down
+        """)
     
     with col2:
         # Distribution of vehicles by mileage
