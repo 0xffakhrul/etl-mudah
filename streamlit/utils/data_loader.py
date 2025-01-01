@@ -20,7 +20,8 @@ def load_car_data():
         SELECT 
             make, model, price, year, location,
             mileage_min, mileage_max, transmission,
-            fuel_type, car_type, listing_date, image_count
+            fuel_type, car_type, listing_date, image_count,
+            ad_url
         FROM public.car_listings
         WHERE price > 0 
         AND price < 1000000
@@ -40,7 +41,8 @@ def load_motorcycle_data():
         query = """
         SELECT 
             make, model, price, year, location,
-            listing_date, image_count
+            listing_date, image_count,
+            ad_url
         FROM public.motorcycle_listings
         WHERE price > 0 
         AND price < 100000

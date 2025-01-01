@@ -177,11 +177,24 @@ def render_price_prediction(df, vehicle_type="car"):
                 similar_vehicles = df[similar_filter]
                 
                 if not similar_vehicles.empty:
-                    display_cols = ['make', 'model', 'year', 'price'] + \
+                    # Basic display columns
+                    display_cols = ['make', 'model', 'year', 'price', 'ad_url'] + \
                                  (['mileage_avg', 'transmission', 'fuel_type'] if vehicle_type == "car" else [])
-                    st.dataframe(
-                        similar_vehicles[display_cols].head(5),
-                        use_container_width=True
+                    
+                    # Create a DataFrame for display
+                    display_df = similar_vehicles[display_cols].head(5).copy()
+                    
+                    # Convert ad_url to clickable links
+                    display_df['ad_url'] = display_df['ad_url'].apply(
+                        lambda x: f'<a href="{x}" target="_blank">View Listing</a>' if pd.notna(x) else "N/A"
+                    )
+                    
+                    st.write(
+                        display_df.to_html(
+                            escape=False,
+                            index=False
+                        ),
+                        unsafe_allow_html=True
                     )
                 else:
                     st.info("No similar listings found in the database")
