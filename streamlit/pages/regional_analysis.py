@@ -107,9 +107,9 @@ def render_regional_analysis(df, vehicle_type="car"):
     top_region = location_stats.nlargest(1, 'listing_count').index[0]
     top_count = location_stats.loc[top_region, 'listing_count']
     
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric("Total Listings", f"{total_listings:,}")
+    col2, col3 = st.columns(2)
+    # with col1:
+    #     st.metric("Total Listings", f"{total_listings:,}")
     with col2:
         st.metric("Most Active Region", top_region)
     with col3:
